@@ -1113,3 +1113,56 @@ textarea:focus-visible {
 main:focus {
   outline: none;
 }
+
+/* ==========================================================================
+   Acessibilidade: Suporte a Modo Escuro / Alto Contraste (WCAG 2.1 AA)
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-fundo: #111827;
+    --cor-superficie: #1f2937;
+    --cor-texto: #f9fafb;
+    --cor-texto-secundario: #d1d5db;
+    --cor-borda: #374151;
+    --color-bg-body: #111827;
+    --color-bg-surface: #1f2937;
+    --color-text-main: #f9fafb;
+    --color-text-muted: #d1d5db;
+    --color-border-subtle: #374151;
+    --color-border-input: #4b5563;
+  }
+
+  body {
+    background-color: var(--cor-fundo, #111827);
+    color: var(--cor-texto, #f9fafb);
+  }
+
+  .site-header,
+  .site-footer,
+  .project-card,
+  .modal-content,
+  .modal-box,
+  .info-block,
+  .form-card {
+    background-color: var(--cor-superficie, #1f2937);
+    color: var(--cor-texto, #f9fafb);
+    border-color: var(--cor-borda, #374151);
+  }
+
+  .nav-menu__link {
+    color: var(--cor-texto-secundario, #d1d5db);
+  }
+
+  .nav-menu__link:hover,
+  .nav-menu__link--active {
+    color: #ffffff;
+  }
+
+  input,
+  select,
+  textarea {
+    background-color: #111827;
+    color: #ffffff;
+    border-color: #4b5563;
+  }
+}
