@@ -8,7 +8,7 @@ const listaDeProjetos = [
     {
         id: 1,
         titulo: "Projeto 1 — Inclusão Digital",
-        imagem: "imagens/projetos/projeto1.jpg",
+        imagem: "imagens/projetos/projeto1.webp",
         alt: "Estudantes e idosos em laboratório de informática aprendendo cidadania digital",
         badges: [
             { texto: "Tecnologia", classe: "badge--primary" },
@@ -20,7 +20,7 @@ const listaDeProjetos = [
     {
         id: 2,
         titulo: "Projeto 2 — Primeiro Emprego",
-        imagem: "imagens/projetos/projeto2.jpg",
+        imagem: "imagens/projetos/projeto2.webp",
         alt: "Jovens em sala de aula participando de oficina de capacitação profissional",
         badges: [
             { texto: "Carreira", classe: "badge--accent" },
@@ -39,7 +39,7 @@ const listaDeProjetos = [
     {
         id: 3,
         titulo: "Projeto 3 — Voluntariado Comunitário",
-        imagem: "imagens/projetos/projeto3.jpg",
+        imagem: "imagens/projetos/projeto3.webp",
         alt: "Voluntários universitários auxiliando crianças e jovens estudantes",
         badges: [
             { texto: "Comunidade", classe: "badge--success" },
@@ -75,7 +75,7 @@ function renderizarProjetos() {
         return `
             <article class="project-card">
                 <div class="project-card__media">
-                    <img src="${projeto.imagem}" alt="${projeto.alt}" class="project-card__image">
+                    <img src="${projeto.imagem}" alt="${projeto.alt}" class="project-card__image" loading="lazy" decoding="async">
                 </div>
                 <div class="project-card__body">
                     <div class="project-card__badges">

@@ -21,7 +21,10 @@
     <!-- Cabeçalho Global (Shell SPA) -->
     <header class="site-header">
         <div class="container site-header__container">
-            <img src="imagens/logo.png" alt="Logotipo oficial do Instituto Horizonte" class="site-header__logo">
+            <picture>
+                <source srcset="imagens/logo.webp" type="image/webp">
+                <img src="imagens/logo.png" alt="Logotipo oficial do Instituto Horizonte" class="site-header__logo" decoding="async">
+            </picture>
             <div class="site-header__brand">
                 <h1 class="site-header__title">Instituto Horizonte</h1>
                 <p class="site-header__slogan">Educação e oportunidades para transformar vidas.</p>
@@ -108,9 +111,12 @@
     <!-- Templates de Fallback para execução direta via arquivo (file://) -->
     <template id="tpl-home">
         <div class="hero-banner">
-            <img src="imagens/banner.jpg"
-                alt="Jovens estudantes participando de aula de informática no Instituto Horizonte"
-                class="hero-banner__image">
+            <picture>
+                <source srcset="imagens/banner.webp" type="image/webp">
+                <img src="imagens/banner.jpg"
+                    alt="Jovens estudantes participando de aula de informática no Instituto Horizonte"
+                    class="hero-banner__image" loading="lazy" decoding="async">
+            </picture>
             <div class="hero-banner__content">
                 <p class="hero-banner__subtitle">Transformando potencial em oportunidades</p>
                 <p class="hero-banner__description">Cursos gratuitos, inclusão digital e preparação para o primeiro
