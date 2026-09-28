@@ -1,0 +1,17 @@
+# Dependências
+node_modules/
+
+# Build de produção
+dist/
+
+# Documentos e arquivos temporários
+*.pdf
+.DS_Store
+Thumbs.db
+
+# Logs e IDEs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vscode/
+.idea/
