@@ -20,7 +20,7 @@ function copyStaticFoldersPlugin() {
 }
 
 export default defineConfig({
-  base: './',
+  base: '/instituto-horizonte/',
   root: './',
   build: {
     outDir: 'dist',
