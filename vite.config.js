@@ -20,6 +20,7 @@ function copyStaticFoldersPlugin() {
 }
 
 export default defineConfig({
+  base: './',
   root: './',
   build: {
     outDir: 'dist',
