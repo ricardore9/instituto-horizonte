@@ -1,6 +1,6 @@
 /* ==========================================================================
    Instituto Horizonte - Roteador SPA & Templates Dinâmicos (main.js)
-   Projeto Front-end: Experiência Prática III - Array, .map() & Template Literals
+   Projeto Front-end: Experiência Prática III e IV - SPA, Acessibilidade & A11y
    ========================================================================== */
 
 // Data Array dos Projetos Sociais (Mock Data de Projetos)
@@ -56,7 +56,7 @@ function renderizarProjetos() {
 
     const htmlCards = listaDeProjetos.map(projeto => {
         // Gera o HTML das etiquetas (badges)
-        const htmlBadges = projeto.badges.map(b => 
+        const htmlBadges = projeto.badges.map(b =>
             `<span class="badge ${b.classe}">${b.texto}</span>`
         ).join('');
 
@@ -69,7 +69,7 @@ function renderizarProjetos() {
 
         // Gera a linha de Duração ou Público (se houver)
         const htmlExtra = projeto.duracao ? `<p class="project-card__text"><strong>Duração:</strong> ${projeto.duracao}</p>` :
-                          projeto.publico ? `<p class="project-card__text"><strong>Público:</strong> ${projeto.publico}</p>` : '';
+            projeto.publico ? `<p class="project-card__text"><strong>Público:</strong> ${projeto.publico}</p>` : '';
 
         // Retorna o Template Literal do cartão de projeto
         return `
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             // Tenta buscar o arquivo parcial na pasta html/ via fetch API
             const resposta = await fetch(`html/${pagina}`);
-            
+
             if (resposta.ok) {
                 conteudoHtml = await resposta.text();
             } else {
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (erroFetch) {
             // Fallback para execução direta por arquivo local (file://)
             console.warn(`Fetch local bloqueado para html/${pagina}. Ativando fallback de template local...`);
-            
+
             const templateId = 'tpl-' + pagina.replace('.html', '');
             const templateElement = document.getElementById(templateId);
 
@@ -132,6 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Injeta o conteúdo HTML dentro do container principal <main id="app-content">
         appContent.innerHTML = conteudoHtml;
+
+        // Acessibilidade (WCAG): Desloca o foco para o início do novo ecrã carregado
+        appContent.focus();
 
         // Renderiza dinamicamente os cartões de projetos se o container de projetos existir
         renderizarProjetos();
@@ -165,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Atualiza a classe ativa (.nav-menu__link--active) conforme a rota atual
     function atualizarMenuAtivo(paginaAtual) {
         const linksMenu = document.querySelectorAll('.nav-menu__link');
-        
+
         linksMenu.forEach(link => {
             link.classList.remove('nav-menu__link--active');
             const rotaLink = link.getAttribute('data-route');
@@ -179,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Interceptação global de cliques de navegação (Event Delegation)
     document.addEventListener('click', (e) => {
         const linkRota = e.target.closest('[data-route]');
-        
+
         if (linkRota) {
             e.preventDefault();
             const rotaTarget = linkRota.getAttribute('data-route');

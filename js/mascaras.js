@@ -122,7 +122,7 @@ function initMascarasEFormulario() {
 
     function abrirModal(tipo, titulo, mensagem) {
         if (!modalOverlay) return;
-        
+
         modalTitle.textContent = titulo;
         modalMessage.textContent = mensagem;
 
@@ -226,3 +226,14 @@ window.initMascarasEFormulario = initMascarasEFormulario;
 document.addEventListener('DOMContentLoaded', () => {
     initMascarasEFormulario();
 });
+
+// Acessibilidade: fechar modal com a tecla Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('modal-feedback');
+        if (modal && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+    }
+});

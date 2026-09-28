@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
     <script src="js/main.js" defer></script>
     <script src="js/mascaras.js" defer></script>
 </head>
+
 <body>
 
     <!-- Cabeçalho Global (Shell SPA) -->
@@ -30,7 +32,7 @@
     <!-- Navegação Principal com Rotas SPA (data-route) -->
     <nav class="nav-menu" aria-label="Navegação principal">
         <div class="container nav-menu__wrapper">
-            
+
             <!-- Checkbox Hack para Mobile -->
             <input type="checkbox" id="menu-toggle" class="nav-menu__checkbox" aria-hidden="true">
             <label for="menu-toggle" class="nav-menu__hamburger" aria-label="Abrir menu de navegação">
@@ -44,7 +46,7 @@
                 <li class="nav-menu__item">
                     <a href="index.html" class="nav-menu__link nav-menu__link--active" data-route="home.html">Início</a>
                 </li>
-                
+
                 <!-- Dropdown Institucional -->
                 <li class="nav-menu__item nav-menu__item--has-dropdown">
                     <a href="index.html#missao" class="nav-menu__link" data-route="home.html">
@@ -52,13 +54,16 @@
                     </a>
                     <ul class="nav-menu__dropdown">
                         <li class="nav-menu__dropdown-item">
-                            <a href="index.html#missao" class="nav-menu__dropdown-link" data-route="home.html">Missão & Visão</a>
+                            <a href="index.html#missao" class="nav-menu__dropdown-link" data-route="home.html">Missão &
+                                Visão</a>
                         </li>
                         <li class="nav-menu__dropdown-item">
-                            <a href="index.html#valores" class="nav-menu__dropdown-link" data-route="home.html">Valores</a>
+                            <a href="index.html#valores" class="nav-menu__dropdown-link"
+                                data-route="home.html">Valores</a>
                         </li>
                         <li class="nav-menu__dropdown-item">
-                            <a href="index.html#historia" class="nav-menu__dropdown-link" data-route="home.html">Nossa História</a>
+                            <a href="index.html#historia" class="nav-menu__dropdown-link" data-route="home.html">Nossa
+                                História</a>
                         </li>
                     </ul>
                 </li>
@@ -75,7 +80,7 @@
     </nav>
 
     <!-- Conteúdo Principal Dinâmico (Alvo de injeção dos templates da SPA) -->
-    <main id="app-content" class="container main-content">
+    <main id="app-content" class="container main-content" tabindex="-1">
         <!-- Os templates da pasta /html/ (home.html, projetos.html, cadastro.html) serão injetados aqui via JS -->
     </main>
 
@@ -103,20 +108,25 @@
     <!-- Templates de Fallback para execução direta via arquivo (file://) -->
     <template id="tpl-home">
         <div class="hero-banner">
-            <img src="imagens/banner.jpg" alt="Jovens estudantes participando de aula de informática no Instituto Horizonte" class="hero-banner__image">
+            <img src="imagens/banner.jpg"
+                alt="Jovens estudantes participando de aula de informática no Instituto Horizonte"
+                class="hero-banner__image">
             <div class="hero-banner__content">
                 <p class="hero-banner__subtitle">Transformando potencial em oportunidades</p>
-                <p class="hero-banner__description">Cursos gratuitos, inclusão digital e preparação para o primeiro emprego.</p>
+                <p class="hero-banner__description">Cursos gratuitos, inclusão digital e preparação para o primeiro
+                    emprego.</p>
             </div>
         </div>
         <div class="home-grid">
             <section id="missao" class="info-block home-grid__missao">
                 <h2 class="section-title">Nossa Missão</h2>
-                <p class="info-block__text">Promover a inclusão social por meio da educação, tecnologia e qualificação profissional, preparando jovens para construir um futuro com autonomia e dignidade.</p>
+                <p class="info-block__text">Promover a inclusão social por meio da educação, tecnologia e qualificação
+                    profissional, preparando jovens para construir um futuro com autonomia e dignidade.</p>
             </section>
             <section class="info-block home-grid__visao">
                 <h2 class="section-title">Visão</h2>
-                <p class="info-block__text">Ser referência regional em formação cidadã e empregabilidade para adolescentes e jovens.</p>
+                <p class="info-block__text">Ser referência regional em formação cidadã e empregabilidade para
+                    adolescentes e jovens.</p>
             </section>
             <section id="valores" class="info-block home-grid__valores">
                 <h2 class="section-title">Valores</h2>
@@ -130,8 +140,10 @@
             </section>
             <article id="historia" class="info-block home-grid__historia">
                 <h2 class="section-title">Nossa História</h2>
-                <p class="info-block__text">O Instituto Horizonte nasceu da iniciativa de educadores e voluntários que acreditam que a educação transforma vidas.</p>
-                <p class="info-block__text">Atuamos oferecendo cursos gratuitos de informática, oficinas de desenvolvimento profissional e apoio à inserção de jovens no mercado de trabalho.</p>
+                <p class="info-block__text">O Instituto Horizonte nasceu da iniciativa de educadores e voluntários que
+                    acreditam que a educação transforma vidas.</p>
+                <p class="info-block__text">Atuamos oferecendo cursos gratuitos de informática, oficinas de
+                    desenvolvimento profissional e apoio à inserção de jovens no mercado de trabalho.</p>
             </article>
         </div>
     </template>
@@ -154,23 +166,30 @@
             <form action="#" method="POST" class="volunteer-form" novalidate>
                 <div class="form-group col-12">
                     <label for="nome" class="form-group__label">Nome completo *</label>
-                    <input type="text" id="nome" name="nome" class="form-group__input" required placeholder="Digite seu nome completo">
+                    <input type="text" id="nome" name="nome" class="form-group__input" required
+                        placeholder="Digite seu nome completo">
                 </div>
                 <div class="form-group col-12">
                     <label for="email" class="form-group__label">E-mail *</label>
-                    <input type="email" id="email" name="email" class="form-group__input" required placeholder="seu.email@exemplo.com">
+                    <input type="email" id="email" name="email" class="form-group__input" required
+                        placeholder="seu.email@exemplo.com">
                 </div>
                 <div class="form-group form-group--cpf">
                     <label for="cpf" class="form-group__label">CPF *</label>
-                    <input type="text" id="cpf" name="cpf" class="form-group__input" required placeholder="000.000.000-00" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato 000.000.000-00">
+                    <input type="text" id="cpf" name="cpf" class="form-group__input" required
+                        placeholder="000.000.000-00" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                        title="Digite um CPF no formato 000.000.000-00">
                 </div>
                 <div class="form-group form-group--telefone">
                     <label for="telefone" class="form-group__label">Telefone *</label>
-                    <input type="tel" id="telefone" name="telefone" class="form-group__input" required placeholder="(11) 99999-9999" maxlength="15" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" title="Digite um telefone válido com DDD. Exemplo: (11) 99999-9999">
+                    <input type="tel" id="telefone" name="telefone" class="form-group__input" required
+                        placeholder="(11) 99999-9999" maxlength="15" pattern="\(\d{2}\)\s\d{4,5}-\d{4}"
+                        title="Digite um telefone válido com DDD. Exemplo: (11) 99999-9999">
                 </div>
                 <div class="form-group form-group--cep">
                     <label for="cep" class="form-group__label">CEP *</label>
-                    <input type="text" id="cep" name="cep" class="form-group__input" required placeholder="00000-000" maxlength="9" pattern="\d{5}-\d{3}" title="Digite um CEP no formato 00000-000">
+                    <input type="text" id="cep" name="cep" class="form-group__input" required placeholder="00000-000"
+                        maxlength="9" pattern="\d{5}-\d{3}" title="Digite um CEP no formato 00000-000">
                 </div>
                 <div class="form-group form-group--nascimento">
                     <label for="data_nascimento" class="form-group__label">Data de nascimento *</label>
@@ -180,7 +199,8 @@
                     <legend class="form-group__legend">Perfil *</legend>
                     <div class="form-options">
                         <label class="form-option">
-                            <input type="radio" name="perfil" value="voluntario" class="form-option__input" required checked> Voluntário
+                            <input type="radio" name="perfil" value="voluntario" class="form-option__input" required
+                                checked> Voluntário
                         </label>
                         <label class="form-option">
                             <input type="radio" name="perfil" value="doador" class="form-option__input" required> Doador
@@ -202,19 +222,23 @@
                     <legend class="form-group__legend">Disponibilidade</legend>
                     <div class="form-options">
                         <label class="form-option">
-                            <input type="checkbox" name="disponibilidade[]" value="Manhã" class="form-option__input"> Manhã
+                            <input type="checkbox" name="disponibilidade[]" value="Manhã" class="form-option__input">
+                            Manhã
                         </label>
                         <label class="form-option">
-                            <input type="checkbox" name="disponibilidade[]" value="Tarde" class="form-option__input"> Tarde
+                            <input type="checkbox" name="disponibilidade[]" value="Tarde" class="form-option__input">
+                            Tarde
                         </label>
                         <label class="form-option">
-                            <input type="checkbox" name="disponibilidade[]" value="Noite" class="form-option__input"> Noite
+                            <input type="checkbox" name="disponibilidade[]" value="Noite" class="form-option__input">
+                            Noite
                         </label>
                     </div>
                 </fieldset>
                 <div class="form-group col-12">
                     <label for="mensagem" class="form-group__label">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" class="form-group__textarea" rows="4" maxlength="500" placeholder="Escreva uma mensagem ou observação (opcional)"></textarea>
+                    <textarea id="mensagem" name="mensagem" class="form-group__textarea" rows="4" maxlength="500"
+                        placeholder="Escreva uma mensagem ou observação (opcional)"></textarea>
                 </div>
                 <div class="form-group col-12">
                     <button type="submit" class="btn btn--primary">Enviar Cadastro</button>
@@ -236,4 +260,5 @@
     </template>
 
 </body>
+
 </html>
