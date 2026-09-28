@@ -1,0 +1,116 @@
+<!-- Template Parcial: /html/cadastro.html -->
+<h1 class="page-title">Cadastro de Voluntários</h1>
+
+<div class="form-card">
+    
+    <!-- Caixa de Alerta de Informação -->
+    <div class="alert alert--info" role="status">
+        <p><strong>Importante:</strong> As vagas para o voluntariado em Tecnologia estão limitadas este mês.</p>
+    </div>
+
+    <form action="#" method="POST" class="volunteer-form" novalidate>
+        
+        <!-- Nome Completo (span 12) -->
+        <div class="form-group col-12">
+            <label for="nome" class="form-group__label">Nome completo *</label>
+            <input type="text" id="nome" name="nome" class="form-group__input" required placeholder="Digite seu nome completo">
+        </div>
+
+        <!-- E-mail (span 12) -->
+        <div class="form-group col-12">
+            <label for="email" class="form-group__label">E-mail *</label>
+            <input type="email" id="email" name="email" class="form-group__input" required placeholder="seu.email@exemplo.com">
+        </div>
+
+        <!-- CPF (span 6 no Grid) -->
+        <div class="form-group form-group--cpf">
+            <label for="cpf" class="form-group__label">CPF *</label>
+            <input type="text" id="cpf" name="cpf" class="form-group__input" required placeholder="000.000.000-00" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato 000.000.000-00">
+        </div>
+
+        <!-- Telefone (span 6 no Grid) -->
+        <div class="form-group form-group--telefone">
+            <label for="telefone" class="form-group__label">Telefone *</label>
+            <input type="tel" id="telefone" name="telefone" class="form-group__input" required placeholder="(11) 99999-9999" maxlength="15" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" title="Digite um telefone válido com DDD. Exemplo: (11) 99999-9999">
+        </div>
+
+        <!-- CEP (span 6 no Grid) -->
+        <div class="form-group form-group--cep">
+            <label for="cep" class="form-group__label">CEP *</label>
+            <input type="text" id="cep" name="cep" class="form-group__input" required placeholder="00000-000" maxlength="9" pattern="\d{5}-\d{3}" title="Digite um CEP no formato 00000-000">
+        </div>
+
+        <!-- Data de Nascimento (span 6 no Grid) -->
+        <div class="form-group form-group--nascimento">
+            <label for="data_nascimento" class="form-group__label">Data de nascimento *</label>
+            <input type="date" id="data_nascimento" name="data_nascimento" class="form-group__input" required>
+        </div>
+
+        <!-- Perfil (Fieldset + Legend + Radios - span 6) -->
+        <fieldset class="form-group form-group--perfil">
+            <legend class="form-group__legend">Perfil *</legend>
+            <div class="form-options">
+                <label class="form-option">
+                    <input type="radio" name="perfil" value="voluntario" class="form-option__input" required checked> Voluntário
+                </label>
+                <label class="form-option">
+                    <input type="radio" name="perfil" value="doador" class="form-option__input" required> Doador
+                </label>
+            </div>
+        </fieldset>
+
+        <!-- Área de Interesse (Select - span 6) -->
+        <div class="form-group form-group--area">
+            <label for="area_interesse" class="form-group__label">Área de interesse *</label>
+            <select id="area_interesse" name="area_interesse" class="form-group__select" required>
+                <option value="">Selecione uma área...</option>
+                <option value="Informática">Informática</option>
+                <option value="Administração">Administração</option>
+                <option value="Logística">Logística</option>
+                <option value="Educação">Educação</option>
+                <option value="Eventos Sociais">Eventos Sociais</option>
+            </select>
+        </div>
+
+        <!-- Disponibilidade (Fieldset + Legend + Checkboxes - span 12) -->
+        <fieldset class="form-group col-12">
+            <legend class="form-group__legend">Disponibilidade</legend>
+            <div class="form-options">
+                <label class="form-option">
+                    <input type="checkbox" name="disponibilidade[]" value="Manhã" class="form-option__input"> Manhã
+                </label>
+                <label class="form-option">
+                    <input type="checkbox" name="disponibilidade[]" value="Tarde" class="form-option__input"> Tarde
+                </label>
+                <label class="form-option">
+                    <input type="checkbox" name="disponibilidade[]" value="Noite" class="form-option__input"> Noite
+                </label>
+            </div>
+        </fieldset>
+
+        <!-- Mensagem (Textarea - span 12) -->
+        <div class="form-group col-12">
+            <label for="mensagem" class="form-group__label">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" class="form-group__textarea" rows="4" maxlength="500" placeholder="Escreva uma mensagem ou observação (opcional)"></textarea>
+        </div>
+
+        <!-- Botão de Envio (span 12) -->
+        <div class="form-group col-12">
+            <button type="submit" class="btn btn--primary">Enviar Cadastro</button>
+        </div>
+
+    </form>
+</div>
+
+<!-- Modal Dialog Centrado no Centro da Tela (Sucesso / Alerta) -->
+<div id="modal-feedback" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button type="button" class="modal-close" id="modal-close" aria-label="Fechar modal">&times;</button>
+        <div id="modal-icon" class="modal-icon"></div>
+        <h3 id="modal-title" class="modal-title">Título do Modal</h3>
+        <p id="modal-message" class="modal-message">Mensagem do modal...</p>
+        <div class="modal-actions">
+            <button type="button" class="btn btn--primary" id="modal-btn-confirm">Entendido</button>
+        </div>
+    </div>
+</div>
